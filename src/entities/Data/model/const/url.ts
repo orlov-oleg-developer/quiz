@@ -1,0 +1,1 @@
+export const SERVICE_URL = 'https://gist.githubusercontent.com/orlov-oleg-developer/607da4c90cb8d5649c19eaab1293f29a/raw/66b44dfd521eda52e9ccf8222083eca941402713/quiz.json'

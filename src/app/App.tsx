@@ -1,24 +1,16 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: #BF4F74;
-`;
+import { useSelector } from 'react-redux';
+import { getUserInfo } from '@/entities/User/model/selectors/getUserInfo';
+import QuizPage from '@/pages/QuizPage/QuizPage';
+import ResultPage from '@/pages/ResultPage/ResultPage';
 
 function App() {
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(userActions.initAuthData());
-    // }, [dispatch]);
+    const { result } = useSelector(getUserInfo)
 
     return (
-        <div>
-            <Title>1323</Title>
-        </div>
-    );
+        result
+            ? <ResultPage />
+            : <QuizPage />
+    )
 }
 
 export default App;

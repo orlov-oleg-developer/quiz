@@ -1,8 +1,13 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
+import { dataReducer } from '@/entities/Data/model/slice/dataSlice';
+import { useDispatch } from 'react-redux';
+import { userReducer } from '@/entities/User/model/slice/userSlice';
 
 export function createReduxStore(initialState?: StateSchema) {
     const rootReducers: ReducersMapObject<StateSchema> = {
+        data: dataReducer,
+        user: userReducer
     };
 
     return configureStore<StateSchema>({
@@ -11,3 +16,4 @@ export function createReduxStore(initialState?: StateSchema) {
         preloadedState: initialState,
     });
 }
+export const useAppDispatch = () => useDispatch<any>();
