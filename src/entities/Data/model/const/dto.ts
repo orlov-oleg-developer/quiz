@@ -58,7 +58,7 @@ export const dtoMock: Dto = {
             "type": "multiple",
             "difficulty": "medium",
             "category": "History",
-            "question": "In what prison was Adolf Hitler held in 1924?",
+            "question": "In what prison was human held in 1924?",
             "correct_answers": [
                 "Landsberg Prison",
                 "Spandau Prison"

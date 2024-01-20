@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/app/providers/StoreProvider/config/store';
-import { getData } from '@/entities/Data/model/selectors/getData';
+import { getData, getIsLoading } from '@/entities/Data/model/selectors/getData';
 import { getLastIndexOfQuestions } from '@/entities/Data/model/selectors/getLastIndexOfQuestions';
 import { getQuizData } from '@/entities/Data/model/services/getQuizData';
 import { dataActions } from '@/entities/Data/model/slice/dataSlice';
@@ -43,6 +43,8 @@ function QuizPage() {
     const dispatch = useAppDispatch()
 
     const data = useSelector(getData)
+    const isLoading = useSelector(getIsLoading)
+
     const { currentQuestion } = useSelector(getUserInfo)
     const lastIndexOfQuestions = useSelector(getLastIndexOfQuestions)
 
@@ -63,11 +65,12 @@ function QuizPage() {
         dispatch(dataActions.checkAnswer({ id, questionIndex: currentQuestion, type: data[currentQuestion].type }))
     }, [currentQuestion, data, dispatch])
 
-    if (!data) return <div>Данные загружаются...</div>
+    if (isLoading) return <div>Данные загружаются...</div>
+    if (!data) return <div>При загрузке данных произошла ошибка</div>
 
     return (
-        <StyledContainer>
-            <Title>Опросник</Title>
+        <StyledContainer data-testid={'QuizPage'}>
+            <Title data-testid={'QuizTitle'}>Опросник</Title>
 
             <StyledQuestionCard>
                 <StyledCardHeader>
@@ -76,20 +79,20 @@ function QuizPage() {
                 </StyledCardHeader>
                 <SubTitle align={'center'}>{data[currentQuestion].question}</SubTitle>
                 <StyledGridWithAnswers>
-                    {data[currentQuestion].answers.map((answer) => (
+                    {data[currentQuestion].answers.map((answer, i) => (
                         <StyledAnswer key={answer.id}>
                             <Text>{answer.text}</Text>
                             {data[currentQuestion].type === 'boolean'
-                                ? <RadioButton checked={answer.isChecked} onChange={() => onCheck(answer.id)} />
-                                : <Checkbox checked={answer.isChecked} onChange={() => onCheck(answer.id)} />
+                                ? <RadioButton data-testid={`check ${i + 1}`} checked={answer.isChecked} onChange={() => onCheck(answer.id)} />
+                                : <Checkbox data-testid={`check ${i + 1}`} checked={answer.isChecked} onChange={() => onCheck(answer.id)} />
                             }
                         </StyledAnswer>
                     ))}
                 </StyledGridWithAnswers>
                 <div>
                     {currentQuestion < lastIndexOfQuestions
-                        ? <Button onClick={() => onQuestionChange('next')}>Следующий вопрос</Button>
-                        : <Button onClick={onFinish}>Завершить тест</Button>
+                        ? <Button data-testid={'nextQuestion'} onClick={() => onQuestionChange('next')}>Следующий вопрос</Button>
+                        : <Button data-testid={'finishQuiz'} onClick={onFinish}>Завершить тест</Button>
                     }
 
                 </div>

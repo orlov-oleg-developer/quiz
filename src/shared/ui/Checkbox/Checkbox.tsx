@@ -76,12 +76,13 @@ const Styled = styled.div<CheckboxProps>`
 interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   onChange?: () => void
   status?: AnswerStatus
+  "data-testid"?: string
 }
 
 const Checkbox = memo((props: CheckboxProps) => {
   return (
-    <Styled onClick={props.onChange} status={props.status}>
-      <input type='checkbox' {...props} />
+    <Styled data-testid={props["data-testid"]} onClick={props.onChange} status={props.status}>
+      <input type='checkbox' {...props} data-testid={""} />
       <label>{''}</label>
     </Styled>
   )

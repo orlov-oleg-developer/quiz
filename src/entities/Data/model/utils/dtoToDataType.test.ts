@@ -125,7 +125,7 @@ const returnData: DataType[] = [
         type: 'multiple',
         difficulty: 'medium',
         category: 'History',
-        question: 'In what prison was Adolf Hitler held in 1924?',
+        question: 'In what prison was human held in 1924?',
         answers: [
             {
                 id: 'e758e805-b6ea-11ee-aa6a-83c7c925c957',

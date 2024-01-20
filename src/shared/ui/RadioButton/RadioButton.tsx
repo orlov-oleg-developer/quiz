@@ -66,12 +66,13 @@ const StyledRadioButton = styled.input`
 interface RadioButtonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   onChange?: () => void
   status?: AnswerStatus
+  "data-testid"?: string
 }
 
 const RadioButton = memo((props: RadioButtonProps) => {
   return (
-    <Container onClick={props.onChange}>
-      <StyledRadioButton type='radio' name="radio" {...props} />
+    <Container data-testid={props["data-testid"]} onClick={props.onChange}>
+      <StyledRadioButton type='radio' name="radio" {...props} data-testid={""} />
       <RadioButtonLabel status={props.status} />
     </Container>
   )

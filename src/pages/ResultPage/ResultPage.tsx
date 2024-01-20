@@ -40,7 +40,7 @@ function ResultPage() {
             <Title>Результаты</Title>
 
             <StyledQuestionCard>
-                <SubTitle>{`Количество правильных ответов: ${totalScore}`}</SubTitle>
+                <SubTitle data-testid={'totalScore'}>{`Количество правильных ответов: ${totalScore}`}</SubTitle>
             </StyledQuestionCard>
 
             {Object.keys(result).map((key, i) => (
@@ -65,7 +65,7 @@ function ResultPage() {
                 </Fragment>
             ))}
 
-            <Button onClick={onRestart}>Начать заново</Button>
+            <Button data-testid={'resetartQuiz'} onClick={onRestart}>Начать заново</Button>
         </StyledContainer>
     )
 }

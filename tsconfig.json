@@ -24,12 +24,23 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
-    }
-  }
+    },
+  },
+  "exclude": [
+    "./cypress/cypress.config.ts",
+    "node_modules",
+    "cypress",
+    "**/*.cy.tsx",
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }
