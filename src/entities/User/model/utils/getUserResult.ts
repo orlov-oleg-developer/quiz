@@ -17,12 +17,14 @@ const getResult = (data: DataType[]): ResultItem[] => {
         answers: item.answers.map(answer => {
             let status: Answer['status'] = null
             if (answer.isChecked && item.correct.includes(answer.text)) status = 'OK'
+            if (answer.isChecked && !item.correct.includes(answer.text)) status = 'Error'
             if (item.correct.includes(answer.text) && !answer.isChecked) status = 'Error'
 
             return {
                 id: answer.id,
                 text: answer.text,
-                status: status
+                status: status,
+                isChecked: answer.isChecked
             }
         })
     }))

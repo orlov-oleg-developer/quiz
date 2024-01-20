@@ -19,10 +19,12 @@ const RadioButtonLabel = styled.label<RadioButtonProps>`
   border: 1px solid #bebebe;
 
   ${props => (props.status === 'OK') && css`
-    border: 3px solid green;
+    border: none;
+    outline: 3px solid green;
   `};
   ${props => props.status === 'Error' && css`
-    border: 3px solid red;
+    border: none;
+    outline: 3px solid red;
   `};
 `;
 

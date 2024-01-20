@@ -21,6 +21,7 @@ export type Answer = {
     id: string,
     text: string
     status: AnswerStatus
+    isChecked?: boolean
 }
 
 export type AnswerStatus = 'OK' | 'Error' | null

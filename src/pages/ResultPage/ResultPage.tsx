@@ -54,8 +54,8 @@ function ResultPage() {
                                     <StyledAnswer key={answer.id}>
                                         <Text>{answer.text}</Text>
                                         {question.type === 'boolean'
-                                            ? <RadioButton status={answer.status} defaultChecked={false} />
-                                            : <Checkbox status={answer.status} defaultChecked={false} />
+                                            ? <RadioButton status={answer.status} checked={answer.isChecked} />
+                                            : <Checkbox status={answer.status} defaultChecked={answer.isChecked} />
                                         }
                                     </StyledAnswer>
                                 ))}

@@ -24,10 +24,12 @@ const Styled = styled.div<CheckboxProps>`
       box-shadow: inset 0 1px 3px rgba(0,0,0,.3); /* légère ombre interne */
 
       ${props => (props.status === 'Error') && css`
-        border: 3px solid red;
+        border: none;
+        outline: 3px solid red;
       `}
       ${props => (props.status === 'OK') && css`
-        border: 3px solid green;
+        border: none;
+        outline: 3px solid green;
       `}
     }
     &:after {

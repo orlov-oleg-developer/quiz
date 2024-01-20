@@ -146,22 +146,26 @@ export const userResultMock: Result = {
                 {
                     id: 'e758e7f0-b6ea-11ee-aa6a-83c7c925c957',
                     text: 'Discontinued',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'e758e7f1-b6ea-11ee-aa6a-83c7c925c957',
                     text: 'Diminshed',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'e758e7f2-b6ea-11ee-aa6a-83c7c925c957',
                     text: 'Limited',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'e758e7f3-b6ea-11ee-aa6a-83c7c925c957',
                     text: 'Contraband',
-                    status: 'OK'
+                    status: 'OK',
+                    isChecked: true
                 }
             ],
         },
@@ -173,22 +177,26 @@ export const userResultMock: Result = {
                 {
                     id: 'ed99f738-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'Echo &amp; the Bunnymen',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'ed99f739-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'New Order',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'ed99f73a-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'The Cure',
-                    status: 'OK'
+                    status: 'OK',
+                    isChecked: true
                 },
                 {
                     id: 'ed99f73b-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'The Smiths',
-                    status: 'Error'
+                    status: 'Error',
+                    isChecked: false
                 }
             ],
         },
@@ -202,22 +210,26 @@ export const userResultMock: Result = {
                 {
                     id: 'ed99f73d-b6f4-11ee-91b1-8bab4aedff5c',
                     text: '100',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'ed99f73e-b6f4-11ee-91b1-8bab4aedff5c',
                     text: '50',
-                    status: null
+                    status: 'Error',
+                    isChecked: true
                 },
                 {
                     id: 'ed99f73f-b6f4-11ee-91b1-8bab4aedff5c',
                     text: '95',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'ed99f740-b6f4-11ee-91b1-8bab4aedff5c',
                     text: '70',
-                    status: 'OK'
+                    status: 'OK',
+                    isChecked: true
                 }
             ],
         },
@@ -231,22 +243,26 @@ export const userResultMock: Result = {
                 {
                     id: 'ed99f747-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'Contra',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'ed99f748-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'Castlevania: Symphony of the Night',
-                    status: null
+                    status: null,
+                    isChecked: false
                 },
                 {
                     id: 'ed99f749-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'Policenauts',
-                    status: 'OK'
+                    status: 'OK',
+                    isChecked: true
                 },
                 {
                     id: 'ed99f74a-b6f4-11ee-91b1-8bab4aedff5c',
                     text: 'Gradius',
-                    status: 'OK'
+                    status: 'OK',
+                    isChecked: true
                 }
             ],
         },
