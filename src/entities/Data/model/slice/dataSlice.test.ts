@@ -122,7 +122,7 @@ describe('dataSlice.test', () => {
     test('test checkAnswer', () => {
         expect(dataReducer(
             state as DataSchema,
-            dataActions.checkAnswer({ id: 'd4bca941-b773-11ee-9cfc-e3a7d4e4d3a7', questionIndex: 0 }),
+            dataActions.checkAnswer({ id: 'd4bca941-b773-11ee-9cfc-e3a7d4e4d3a7', questionIndex: 0, type: 'boolean' }),
         ).data[0].answers).toEqual([
             {
                 id: 'd4bca941-b773-11ee-9cfc-e3a7d4e4d3a7',

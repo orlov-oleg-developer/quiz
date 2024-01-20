@@ -23,4 +23,4 @@ export type Answer = {
     status: AnswerStatus
 }
 
-type AnswerStatus = 'OK' | 'Error' | null
+export type AnswerStatus = 'OK' | 'Error' | null

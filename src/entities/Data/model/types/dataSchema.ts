@@ -35,3 +35,8 @@ type DtoElement = {
 
 export type Difficulty = 'easy' | 'hard' | 'medium'
 export type QuizType = 'boolean' | 'multiple'
+export const DifficultyDictionary: Record<Difficulty, string> = {
+    easy: 'Простая',
+    medium: 'Средняя',
+    hard: 'Трудная'
+}

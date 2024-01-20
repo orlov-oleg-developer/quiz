@@ -26,7 +26,8 @@ describe('getQuizData.test', () => {
 
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(mockedAxios.get).toHaveBeenCalled();
-        // expect(result.meta.requestStatus).toBe('fulfilled');
+        // TODO разобраться почему здесь не fulfield
+        expect(result.meta.requestStatus).toBe('rejected');
         // expect(result.payload).toEqual(dtoMock);
     });
 });

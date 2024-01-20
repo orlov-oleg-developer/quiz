@@ -207,7 +207,7 @@ export const userResultMock: Result = {
                 {
                     id: 'ed99f73e-b6f4-11ee-91b1-8bab4aedff5c',
                     text: '50',
-                    status: 'Error'
+                    status: null
                 },
                 {
                     id: 'ed99f73f-b6f4-11ee-91b1-8bab4aedff5c',

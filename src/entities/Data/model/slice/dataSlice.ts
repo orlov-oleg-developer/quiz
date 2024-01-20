@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { DataSchema } from '../types/dataSchema';
+import { DataSchema, QuizType } from '../types/dataSchema';
 import { getQuizData } from '../services/getQuizData';
 import { dtoToDataType } from '../utils/dtoToDataType';
 
@@ -12,9 +12,12 @@ export const dataSlice = createSlice({
     name: 'data',
     initialState,
     reducers: {
-        checkAnswer: (state, action: PayloadAction<{ id: string, questionIndex: number }>) => {
-            const { id, questionIndex } = action.payload
+        checkAnswer: (state, action: PayloadAction<{ id: string, questionIndex: number, type: QuizType }>) => {
+            const { id, questionIndex, type } = action.payload
             const currentAnswer = state.data[questionIndex].answers.find(answer => answer.id === id)
+            if (type === 'boolean') {
+                state.data[questionIndex].answers.map(answer => answer.isChecked = false)
+            }
             currentAnswer.isChecked = !currentAnswer.isChecked
         },
         resetData: (state) => {
