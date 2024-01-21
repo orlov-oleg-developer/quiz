@@ -1,6 +1,11 @@
 import { DataType } from "@/entities/Data/model/types/dataSchema";
 import { Answer, Result, ResultItem } from "../types/userSchema";
 
+/**
+ * Will divide the user's results into 3 difficulty levels
+ * @param data - data from quiz
+ * @returns Result
+ */
 export const getUserResult = (data: DataType[]): Result => {
     return {
         easy: getResult(data.filter(question => question.difficulty === 'easy')),
@@ -9,6 +14,11 @@ export const getUserResult = (data: DataType[]): Result => {
     }
 }
 
+/**
+ * Turn quiz item data from DataTyppe in ResultItem type
+ * @param data - data from quiz
+ * @returns ResultItem[]
+ */
 const getResult = (data: DataType[]): ResultItem[] => {
     return data.map(item => ({
         id: item.id,

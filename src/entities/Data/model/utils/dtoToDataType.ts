@@ -1,6 +1,11 @@
 import { v1 } from "uuid";
 import { DataSchema, Dto } from "../types/dataSchema";
 
+/**
+ * Turn dto in Datype[]
+ * @param dto - dto with quiz from public server
+ * @returns Datype[]
+ */
 export const dtoToDataType = (dto: Dto): DataSchema['data'] => {
     return dto.results.map(item => {
         const answers: string[] = []

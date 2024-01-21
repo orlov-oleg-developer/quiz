@@ -20,11 +20,11 @@ const RadioButtonLabel = styled.label<RadioButtonProps>`
 
   ${props => (props.status === 'OK') && css`
     border: none;
-    outline: 3px solid green;
+    outline: ${props => `3px solid ${props.theme.colors.success}` || '3px solid green'};
   `};
   ${props => props.status === 'Error' && css`
     border: none;
-    outline: 3px solid red;
+    outline: ${props => `3px solid ${props.theme.colors.error}` || '3px solid red'};
   `};
 `;
 

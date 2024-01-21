@@ -10,7 +10,9 @@ const theme = {
         text: '#CDCDCD',
         bg: '#010101',
         block: '#161616',
-        buttonText: 'black'
+        buttonText: 'black',
+        success: '#6DB95A',
+        error: '#DD5E5E',
     },
     media: {
         phone: "(max-width: 425px)",

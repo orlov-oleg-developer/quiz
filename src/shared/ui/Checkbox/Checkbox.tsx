@@ -25,11 +25,11 @@ const Styled = styled.div<CheckboxProps>`
 
       ${props => (props.status === 'Error') && css`
         border: none;
-        outline: 3px solid red;
+        outline: ${props => `3px solid ${props.theme.colors.error}` || '3px solid red'};
       `}
       ${props => (props.status === 'OK') && css`
         border: none;
-        outline: 3px solid green;
+        outline: ${props => `3px solid ${props.theme.colors.success}` || '3px solid green'};
       `}
     }
     &:after {
